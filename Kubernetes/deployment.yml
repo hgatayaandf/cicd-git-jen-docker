@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiggy-app
+  name: swiggy-apps
   labels:
-    app: swiggy-app
+    app: swiggy-apps
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: swiggy-app
+      app: swiggy-apps
   template:
     metadata:
       labels:
-        app: swiggy-app
+        app: swiggy-apps
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-      - name: swiggy-app
-        image: preetz1303/swiggy-clone:latest
+      - name: swiggy-apps
+        image: preetz1303/swiggy-new:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
